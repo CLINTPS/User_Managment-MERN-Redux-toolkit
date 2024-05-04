@@ -82,6 +82,7 @@ const Login = () => {
           const userDataResponse = await axios.get(
             "http://localhost:5000/fetchuserdata"
           );
+          // console.log("userDataResponse",userDataResponse);
           dispatch(setUserData(userDataResponse.data));
           navigate("/home");
           // console.log("user home page");
@@ -106,16 +107,17 @@ const Login = () => {
           }));
         }
       } catch (error) {
-        console.log("sample11asdhfalkhfla");
+        console.log("Login error");
         console.error(error);
       }
     } else {
       console.log("logging");
+      
     }
   };
 
   return (
-    <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0 bg-slate-800">
+    <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0 bg-gradient-to-br from-blue-500 to-green-500">
       <div className="md:w-1/3 max-w-sm">
         <img
           src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"

@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-gray-800 p-5 flex justify-between items-center">
-      <div className="flex items-center">
+      <div className="flex items-center ">
         
         {userData.profile && (
         <img

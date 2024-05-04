@@ -77,7 +77,7 @@ const login = async (req, res) => {
     const existingUser = await User.findOne({ email: req.body.email });
     console.log(existingUser);
     if (!existingUser) {
-      return res.json({ emailerr: "User not found" });
+      return res.json({ emailerr: "User not found " });
     }
 
     const passwordCorrect = await bcrypt.compare(
@@ -86,7 +86,7 @@ const login = async (req, res) => {
     );
 
     if (!passwordCorrect) {
-      return res.json({ passworderr: "Wrong password" });
+      return res.json({ passworderr: "Incorrect password" });
     } else {
       const token = jwt.sign(
         {
