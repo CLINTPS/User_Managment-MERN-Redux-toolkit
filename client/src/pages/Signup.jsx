@@ -107,10 +107,10 @@ const Signup = () => {
     if (!errors.emailred && !errors.namered && !errors.passwordred && !errors.confirmpasswordred) {
         async function register() {
             try {
-                await axios.post('http://localhost:5000/signup', userData)
+                await axios.post('https://user-managment-mern-redux-toolkit-server.onrender.com/signup', userData)
                     .then((response) => {
                         if (response.data.success) {
-                            axios.get('http://localhost:5000/fetchuserdata').then((response) => {
+                            axios.get('https://user-managment-mern-redux-toolkit-server.onrender.com/fetchuserdata').then((response) => {
                                 dispatch(setUserData(response.data))
                             })
                             navigate('/home')

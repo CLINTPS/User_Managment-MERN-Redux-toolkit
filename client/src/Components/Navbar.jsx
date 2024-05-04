@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const userData = useSelector((state) => state.user.userData);
   const logout = () => {
-    axios.get('http://localhost:5000/logout/')
+    axios.get('https://user-managment-mern-redux-toolkit-server.onrender.com/logout/')
       .then(() => {
         dispatch(setUserData(null));
         navigate('/login');

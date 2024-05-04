@@ -73,14 +73,14 @@ const Login = () => {
         // console.log("Every validation is ok");
 
         const response = await axios.post(
-          "http://localhost:5000/login",
+          "https://user-managment-mern-redux-toolkit-server.onrender.com/login",
           userCredentials
         );
         console.log("userCredentials",userCredentials);
 
         if (response.data.success) {
           const userDataResponse = await axios.get(
-            "http://localhost:5000/fetchuserdata"
+            "https://user-managment-mern-redux-toolkit-server.onrender.com/fetchuserdata"
           );
           // console.log("userDataResponse",userDataResponse);
           dispatch(setUserData(userDataResponse.data));

@@ -117,12 +117,12 @@ export const AdminDash = () => {
       async function register() {
         try {
           await axios
-            .post("http://localhost:5000/admin/AdminAddUser/", newUserData)
+            .post("https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminAddUser/", newUserData)
             .then((response) => {
               if (response.data.success) {
                 closeAddModal();
                 axios
-                  .get("http://localhost:5000/admin/AdminFetchToUser")
+                  .get("https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminFetchToUser")
                   .then((response) => {
                     const fetchedUsers = response.data.data;
                     const usersWithId = fetchedUsers.map((user, index) => ({
@@ -197,12 +197,12 @@ export const AdminDash = () => {
   const deleteUser = (id) => {
     const userToDelete = user.find((item) => item.id == id);
     axios
-      .delete("http://localhost:5000/admin/AdminDeleteUser", {
+      .delete("https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminDeleteUser", {
         data: { id: userToDelete._id },
       })
       .then(() => {
         axios
-          .get("http://localhost:5000/admin/AdminFetchToUser")
+          .get("https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminFetchToUser")
           .then((response) => {
             const fetchedUsers = response.data.data;
             const usersWithId = fetchedUsers.map((user, index) => ({
@@ -241,11 +241,11 @@ export const AdminDash = () => {
       setEditerrdef("");
 
       axios
-        .post("http://localhost:5000/admin/AdminEditUser", editname)
+        .post("https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminEditUser", editname)
         .then(() => {
           setOpen(false);
           axios
-            .get("http://localhost:5000/admin/AdminFetchToUser")
+            .get("https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminFetchToUser")
             .then((response) => {
               const fetchedUsers = response.data.data;
               const usersWithId = fetchedUsers.map((user, index) => ({
@@ -277,7 +277,7 @@ export const AdminDash = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:5000/admin/AdminFetchToUser${
+        `https://user-managment-mern-redux-toolkit-server.onrender.com/admin/AdminFetchToUser${
           search ? `?search=${search}` : ""
         }`
       )

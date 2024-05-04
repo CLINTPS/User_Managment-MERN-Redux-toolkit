@@ -16,7 +16,7 @@ const AdminNavbar = ({ setAddModalOpen, setSearch }) => {
   };
 
   const handleLogout = () => {
-    axios.get("http://localhost:5000/logout").then(() => {
+    axios.get("https://user-managment-mern-redux-toolkit-server.onrender.com/logout").then(() => {
       dispatch(setUserData(null));
       navigate("/login");
     });

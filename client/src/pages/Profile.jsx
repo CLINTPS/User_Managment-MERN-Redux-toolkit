@@ -152,7 +152,7 @@ const Profile = () => {
         formData.append("profile", selectedFile);
 
         const imgResponse = await axios.post(
-          "http://localhost:5000/uploadprofileimage/",
+          "https://user-managment-mern-redux-toolkit-server.onrender.com/uploadprofileimage/",
           formData,
           {
             headers: {
@@ -164,7 +164,7 @@ const Profile = () => {
 
 
         const response = await axios.post(
-          "http://localhost:5000/editprofile",
+          "https://user-managment-mern-redux-toolkit-server.onrender.com/editprofile",
           userdata
         );
 
@@ -182,7 +182,7 @@ const Profile = () => {
           navigate("/home");
         }
 
-        axios.get("http://localhost:5000/fetchuserdata/").then((response) => {
+        axios.get("https://user-managment-mern-redux-toolkit-server.onrender.com/fetchuserdata/").then((response) => {
           dispatch(setUserData(response.data));
         });
       }

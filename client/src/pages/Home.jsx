@@ -12,7 +12,7 @@ const Home = () => {
   const userData = useSelector((state) => state.user.userData);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/fetchuserdata").then((response) => {
+    axios.get("https://user-managment-mern-redux-toolkit-server.onrender.com/fetchuserdata").then((response) => {
       dispatch(setUserData(response.data));
     });
   }, []);
