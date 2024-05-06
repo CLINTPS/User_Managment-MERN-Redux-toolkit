@@ -50,6 +50,7 @@ const fetchData = async (req, res) => {
   try {
     console.log("reach fetch");
     const token = req.cookies.token;
+    console.log("🚀 ~ file: userController.js:53 ~ fetchData ~ token:", token)
     if (!token) {
       return res.status(401).json({ error: "Unauthorized token" });
     }
