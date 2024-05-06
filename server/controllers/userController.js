@@ -48,18 +48,18 @@ const postSignup = async (req, res) => {
 //fetch data
 const fetchData = async (req, res) => {
   try {
-    // console.log("reach fetch");
+    console.log("reach fetch");
     const token = req.cookies.token;
     if (!token) {
       return res.status(401).json({ error: "Unauthorized token" });
     }
-    // console.log("reach fetch1");
+    console.log("reach fetch1");
 
     const verified = jwt.verify(token, process.env.JWT_SECRET);
     if (!verified) {
       return res.status(401).json({ error: "Unauthorized jwt" });
     }
-    // console.log("reach fetch2");
+    console.log("reach fetch2");
 
     const data = await User.findById(verified.user);
     if (!data) {
@@ -106,7 +106,7 @@ const login = async (req, res) => {
         .json({ success: true });
     }
 
-    // console.log("done");
+    console.log("done");
   } catch (error) {
     console.error("Error during login:", error);
     res.status(500).json({ error: "Internal server error" });

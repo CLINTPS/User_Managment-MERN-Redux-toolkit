@@ -70,7 +70,7 @@ const Login = () => {
     seterrdefin(errmessage);
     if (valid) {
       try {
-        // console.log("Every validation is ok");
+        console.log("Every validation is ok");
 
         const response = await axios.post(
           "https://user-managment-mern-redux-toolkit-server.onrender.com/login",
@@ -82,12 +82,12 @@ const Login = () => {
           const userDataResponse = await axios.get(
             "https://user-managment-mern-redux-toolkit-server.onrender.com/fetchuserdata"
           );
-          // console.log("userDataResponse",userDataResponse);
+          console.log("userDataResponse",userDataResponse);
           dispatch(setUserData(userDataResponse.data));
           navigate("/home");
-          // console.log("user home page");
+          console.log("user home page");
         } else if (response.data.emailerr) {
-          // console.log("response.data.emailerr");
+          console.log("response.data.emailerr");
           setError((previous) => ({
             ...previous,
             emailerr: true,

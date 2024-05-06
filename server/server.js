@@ -24,7 +24,7 @@ app.use(cors({
 }))
 
 
-
+1
 app.use('/profileimages',express.static('public'))
 app.use('/',userRouter)
 app.use('/admin',adminRouter)
